@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+  font-family: "Open Sans" sans-serif;
+  background-color: #fff;
+  color: #696969;
+  line-height: 1.5;
+}
+
+/* Navigation bar */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+header {
+  color: #000;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+#navbar ul {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 90%;
+  padding: 0;
+}
+
+#navbar li {
+  padding: 8px;
+  list-style: none;
+  position: relative;
+  color: #696969;
+  width: 100%;
+  border-bottom: 1px solid;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #696969;
+  padding: 10px 20px;
+  display: block;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: brown;
+}
+
+/* Mobile Responsive Navbar */
+/* On screens that are less than 700px wide, make the side navbar into a
+top navbar */
+@media screen and (max-width: 700px) {
+  #navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .nav-link {
+    float: left;
+  }
+  #main-doc {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px wide, display the bar vertically 
+instead of horizontally */
+@media screen and (max-width: 400px) {
+  .nav-link {
+    float: none;
+    text-align: center;
+  }
+}
+
+/* Main */
+#main-doc {
+  margin-left: 300px;
+  padding: 0px 10px;
+  margin-bottom: 25px;
+  position: absolute;
+}
