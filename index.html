@@ -19,16 +19,468 @@
             <li><a href="#conditional_statements" class="nav-link">Conditional Statements</a></li>
             <li><a href="#javascript_operators" class="nav-link">Javascript Operators</a></li>
             <li><a href="#loops" class="nav-link">Loops</a></li>
-            <li><a href="#references" class="nav-link">References</a></li>
+            <li><a href="#reference" class="nav-link">Reference</a></li>
         </ul>
     </nav>
     <!-- Main -->
     <main id="main-doc">
-        <section class="main-section"></section>
-        <section class="main-section"></section>
-        <section class="main-section"></section>
-        <section class="main-section"></section>
-        <section class="main-section"></section>
+        <section class="main-section" id="introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    <strong>Javascript</strong>&reg; &#40;often shortened
+                    to <strong>JS</strong>&#41; is a lightweighted, interpreted,
+                    object-oriented language with first class functions, and is best
+                    known as the scripting language for web pages but it's also used in
+                    many non-browser environments.
+                </p> <br>
+
+                <p>
+                    Javascript runs on the client side of the web, which can be used
+                    to design or program how the web pages behave on the occurrence of
+                    an event. Javascript is an easy to learn and also powerful scripting
+                    language widely used for controlling web behavior. 
+                </p> <br>
+
+                <p>
+                    Contrary to the misconception, <strong>Javascript is 
+                    <em>not</em> interpreted as Java</strong>. The basic
+                    syntax is intentionally similar to Java to reduce the
+                    number of new concepts required to learn the language.
+                    Language constructs such as if statements, for and while
+                    loops, switch, and try and catch blocks function the same. 
+                </p> <br>
+
+                <p>
+                    However, Javascript can function as both a procedural and
+                    object-oriented language. Objects are created programmatically
+                    in Javascript by attaching methods and properties to the empty 
+                    objects <strong>at run time</strong> as opposed to class definitions
+                    in Java. Once an object has been constructed, it can be used as a
+                    blueprint or prototype for creating similar objects.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="get_started">
+            <header>Get Started</header>
+            <article>
+                To get started with Javascript, open your text editor
+                and write your first "Hello World" Javascript code in
+                the script tags or external file:
+                <pre><code>document.write("Hello World");</code></pre>
+
+                Open the file in your broswer and you will see the output.
+            </article>
+        </section>
+        <section class="main-section" id="comments">
+            <header>Comments</header>
+            <article>
+                <p>
+                    Comments are lines of code that Javascript will intentionally
+                    ignore. They are a great way to leave notes to yourself and to
+                    other people to figure out what the code does. 
+                </p> <br>
+                
+                <p>There are two ways to write comments in Javascript:</p> <br>
+                
+                <p>
+                    Using // will tell Javascript to ignore the remainder
+                    of the text on the current line.
+                </p>
+                <pre><code>// This is an in-line comment</code></pre> <br>
+                
+                <p>
+                    You can make a multi-line comment beginning with /*
+                    and ending with */
+                </p>
+                <pre><code>/* This is a multi-line comment */</code></pre> <br>
+                <p>
+                    It is a good practice to regularly add comments to clarify the 
+                    function of parts of your code.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="variables">
+            <header>Variables</header>
+            <article>
+                <p>
+                    Javascript variables are containers for storing data
+                    values. The names of variables called identifiers may not
+                    contain spaces or start with numbers but must begin with:
+                </p>
+                <ul>
+                    <li>A letter &#40;A&ndash;Z or a&ndash;z&#41;</li>
+                    <li>A dollar sign &#40;$&#41;</li>
+                    <li>Or an underscore &#40;_&#41;</li>
+                </ul> <br>
+
+                <p>Javascript variables are declared in three ways:</p>
+                <ol>
+                    <li>
+                        With the var keyword: This can be used to declare
+                        both local and global variables. Global variables
+                        are declared outside the function and can be accessed
+                        from anywhere in the program where as the local variables are
+                        declared within the function and can only be accessed from 
+                        inside the function where they are declared.
+                        <pre><code>var age = 24;</code></pre> <br>
+                        Variables declared with the var keyword can be 
+                        redeclared and cannot have block scope. Variables 
+                        declared with var inside <b>{}</b> can be accessed 
+                        from outside the block.
+                        <pre><code>{
+                            var x = 10;
+                            // Can be accessed and used outside the scope 
+                        }</code></pre>
+                    </li> <br>
+                    <li>
+                        With the let keyword: Variables defined with the let
+                        keyword have block scope. Variables declared with let
+                        inside <b>{}</b> cannot be accessed from outside the block.
+                        <pre><code>{
+                            let firstName = "John";
+                            // Cannot be accessed and used outside the scope 
+                        }</code></pre> 
+                    </li> <br>
+                    <li>
+                        With the const keyword: Const is used to define variables that 
+                        cannot be reassigned and have to be initialised with a value. 
+                        Such variables are constant(read only).
+                        <pre><code>const PI = 3.14;
+                            PI = PI + 10; // This will give an error
+                        </code></pre> <br>
+                        Declaring a variable with const is similar to let when 
+                        it comes to Block scope. <br>
+                        The x declared in the block in this example is not the same
+                        as the x declared outside the block:
+                        <pre><code>var x = 10;
+                            // Here x is 10
+                            {
+                                const x = 5;
+                                // Here x is 5
+                            }
+                            // Here x is 10
+                        </code></pre>
+                    </li>
+                </ol>
+            </article>
+        </section>
+        <section class="main-section" id="data_types">
+            <header>Data Types</header>
+            <article>
+                <p>
+                    In programming, data types is an important concept.
+                    Javascript variables can hold many data types forexample:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Primitive data types: These data types have a single simple
+                            data value with no additional properties and methods. Javascript
+                            has seven primitive data types and these include numbers, 
+                            booleans, strings, undefined, null, bigint and symbol.
+                        </p>
+                    </li>
+                    <ul>
+                        <li class="sub-list">
+                            A String: It is a series of characters. Strings 
+                            are written with double quotes. You can use single
+                            or double quotes. Strings are used to represent 
+                            textual data.
+                            <pre><code>var name = "John Doe";</code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Numbers: Numbers can be written with or without
+                            decimals.
+                            <pre><code>var x1 = 34;
+                                var x2 = 34.00;
+                            </code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Booleans: Booleans can only have two values, true
+                            or false. Booleans are often used in conditional 
+                            testing.
+                            <pre><code>var x = 5;
+                                var y = 5;
+                                var z = 6;
+                                (x == y) // Returns true
+                                (x == z) // Returns false
+                            </code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Undefined: The Undefined variable is one without a value.
+                            <pre><code>var car; // value and type are undefined</code></pre>
+                            An empty value has nothing to do with undefined for example:
+                            <pre><code>var car = ""; // value is "", the typeof is "string"</code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Null: In Javascript null is nothing. It is supposed to be something
+                            that doesn't exist.
+                        </li>
+                        <li class="sub-list">
+                            BigInt: The BigInt type is a numeric primitive in Javascript
+                            that can represent integers with arbitrary precision. You can 
+                            safely store and operate on large integers even beyond the safe
+                            integer limit for Number data type. <br>
+                            A BigInt is created by appending <b>n</b> to the end of the integer
+                            or by calling the constructor.
+                            <pre><code>const x = 2n ** 53n;
+                                // 9007199254740992n
+                            </code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Symbol: A Symbol is a unique and primitive value and may be 
+                            used as the key of an object property.
+                        </li>
+                    </ul> <br>
+                    
+                    <li>
+                        <p>
+                            Reference data types: Javascript has 3 data types that are passed
+                            by reference: Array, Function and Object. They are all technically
+                            objects and so we refer to them collectively as objects.
+                        </p>
+                    </li>
+                    <ul>
+                        <li class="sub-list">
+                            Arrays: An array is a data type that represents a 
+                            collection of elements (values or variables).Arrays 
+                            can store numbers, strings, objects, booleans etc.
+                            <pre><code>var score = ["Maths", 90];</code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Objects: They are the most commonly used data type
+                            in Javascript. They are similar to arrays, except in 
+                            order to access and modify data we use properties 
+                            instead of indexes. Objects store data in a structured way.
+                            Objects are written as key-value pairs separated by commas.
+                            <pre><code>var student = {
+                                name: "Tracy",
+                                platform: "FreeCodeCamp",
+                                course: "Javascript",
+                                year: 2021
+                            };</code></pre>
+                        </li>  
+                        <li class="sub-list">
+                            Functions: They are one of the fundamental building 
+                            blocks in Javascript. A function in Javascript is similar
+                            to a procedure that performs a task. It should take some 
+                            input and return an output. <br>
+                            A function declaration consists of the <em>function</em>
+                            keyword followed by the <em>name</em> of the function, 
+                            a list of <em>parameters</em> to the function, enclosed in 
+                            parentheses and separated by commas, the Javascript statements
+                            that define the function, enclosed in curly brackets {...}.
+                            <pre><code>function square(number) {
+                                return number * number;
+                            }</code></pre>
+                        </li>  
+                    </ul>  
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="conditional_statements">
+            <header>Conditional Statements</header>
+            <article>
+                <p>
+                    Conditional statements are used to make decisions in code. A 
+                    conditional statement is a set of commands that executes if a 
+                    specified condition is true. Javascript supports two conditional
+                    statements: <b>if...else</b> and <b>switch</b>
+                </p> <br>
+                <p>
+                    Use the <strong>if</strong> statement to execute a statement if 
+                    a logical condition is true. Use the <strong>else</strong> clause
+                    to execute a statement if the condition is false for example:
+                </p>
+                <pre><code>if (condition) {
+                    statement_1;
+                } else {
+                    statement_2;
+                }</code></pre> <br>
+                <p>
+                    You can also compound the statements using <strong>else if</strong>
+                    to have multiple conditions tested in sequence.
+                </p>
+                <pre><code>if (condition_1) {
+                    statement_1;
+                } else if (condition_2) {
+                    statement_2;
+                } else if (condition_3) {
+                    statement_3;
+                } else {
+                    statement_last;
+                }</code></pre> <br>
+                <p>
+                    Switch statement selects one of many code blocks to be executed.
+                </p>
+                <pre><code>switch(expression) {
+                    case x:
+                        // code block
+                        // break;
+                    case y:
+                        // code block
+                        // break;
+                    default:
+                        //code block
+                    }</code></pre>
+            </article>
+        </section>
+        <section class="main-section" id="javascript_operators">
+            <header>Javascript Operators</header>
+            <article>
+                <p>Javascript has the following type of operators:</p>
+                <ul>
+                    <li>
+                        Assignment Operator. It assigns a value to its left
+                        operand based on the value of its right operand.
+                        <pre><code>var x = 10;</code></pre> <br> 
+                        There are also compound assignment operators for example:
+                    </li>
+                    <ul>
+                        <li class="sub-list">Addition Assignment(+=)</li>
+                        <li class="sub-list">Subtraction Assignment(-=)</li>
+                        <li class="sub-list">Multiplication Assignment(*=)</li>
+                        <li class="sub-list">Division Assignment(/=)</li>
+                        <li class="sub-list">Remainder Assignment(%=)</li>
+                        <li class="sub-list">Exponentiation Assignment(**=)</li>
+                    </ul> <br>
+                    <li>
+                        Arithmetic Operators. They are used to perform arithmetic 
+                        on numbers. They take numerical values as their operands and
+                        return a single numerical value. The standard arithmetic 
+                        operators are addition(+), subtraction(-), multiplication(*)
+                        and division(/). In addition to the standard arithmetic operators,
+                        Javascript provides the following arithmetic operators.
+                    </li>
+                    <ul>
+                        <li class="sub-list">
+                            Remainder(%). A binary operator that returns the integer 
+                            remainder of the two operands
+                            <pre><code>12 % 5 // returns 2</code></pre>
+                        </li>
+                        <li class="sub-list">
+                            Increment(++). A unary operator that adds one to its 
+                            operand. If used as a pre-increment(++x), returns the value
+                            of its operand after adding one. If used as a post-increment
+                            (x++), returns the value of its operand before adding one.
+                        </li>
+                        <li class="sub-list">
+                            Decrement(--). A unary operator that substracts one from 
+                            its operand. The pre-decrement and post-decrement work the 
+                            same way as pre-increment and post-increment respectively.
+                        </li>
+                        <li class="sub-list">
+                            Exponentiation(**). Calculates the base to the exponent power,
+                            that is base<sup>exponent</sup>
+                            <pre><code>2 ** 3 // returns 8</code></pre>
+                        </li>
+                    </ul> <br>
+                    <li>
+                        Comparison Operators. A comparison operator compares its operands
+                        and returns a logical value based on whether the comparison is true
+                        for example:
+                    </li>
+                    <ul>
+                        <li class="sub-list">
+                            Equal(==). Returns true if the operands are equal.
+                        </li>
+                        <li class="sub-list">
+                            Not equal(!=). Returns true if the operands are not equal.
+                        </li>
+                        <li class="sub-list">
+                            Strict equal(===). Returns true if the operands are equal and 
+                            of the same type.
+                        </li>
+                        <li class="sub-list">
+                            Strict not equal(!==). Returns true if the operands are of the 
+                            same type but not equal or are of different type.
+                        </li>
+                        <li class="sub-list">
+                            Greater than(>). Returns true if the left operand is greater than 
+                            the right operand.
+                        </li>
+                        <li class="sub-list">
+                            Greater than or equal to(>=). Returns true if the left operand is 
+                            greater than or equal to the right operand.
+                        </li>
+                        <li class="sub-list">
+                            Less than(&lt;). Returns true if the left operand is less than the 
+                            right operand.
+                        </li>
+                        <li class="sub-list">
+                            Less than or equal to(&lt;=). Returns true if the left operand is 
+                            less than or equal to the right operand.
+                        </li>
+                    </ul> <br>
+                    <li>
+                        Logical operators. They are typically used with boolean values and 
+                        return a boolean value. However when used with a non boolean value, 
+                        they may return a non boolean value for example:
+                    </li>
+                    <ul>
+                        <li class="sub-list">
+                            Logical AND(&&). Returns true if both operands are true, otherwise
+                            returns false.
+                        </li>
+                        <li class="sub-list">
+                            Logical OR(||). Returns true if either operand is true. If both
+                            are false, returns false.
+                        </li>
+                        <li class="sub-list">
+                            Logical NOT(!). Returns false if single operand can be
+                            converted to true, otherwise returns true.
+                        </li>
+                    </ul>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="loops">
+            <header>Loops</header>
+            <article>
+                <p>
+                    Loops offer a quicky and easy way to perform tasks 
+                    repeatedly. Loops provided in Javascript are:
+                </p>
+                <ol>
+                    <li>
+                        A for loop. It repeats until a specified condition 
+                        evaluates to false.
+                    </li>
+                    <pre><code>for ([initialExpression]; [conditionExpression]; incrementExpression) {
+                        statement
+                    }</code></pre>
+                    <li>
+                        Do while loop. It is always executed once before the condition is 
+                        checked. When the condition is true, the statement executes again and 
+                        when it's false, the execution stops.
+                        <pre><code>do {
+                            // code block to be executed
+                        } while(condition);</code></pre>
+                    </li>
+                    <li>
+                        A while loop. Executes its statement as long as a specified condition 
+                        evaluates to true. If the condition becomes false, statement within the 
+                        loop stops executing.
+                    </li>
+                    <pre><code>while (condition) {
+                        statement;
+                    }</code></pre>
+                </ol>
+            </article>
+        </section>
+        <section class="main-section" id="reference">
+            <header>Reference</header>
+            <article>
+                <ul>
+                    <li>
+                        All this documentation is taken from 
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                        target="_blank">MDN</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
 
     </main>
 </body>
